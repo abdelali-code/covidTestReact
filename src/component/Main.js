@@ -4,6 +4,7 @@ import Footer from './Footer';
 import { Home } from './Home';
 import Conseil from './Conseil';
 import Erreur from './Erreur';
+import Test from './Test';
 import { Switch, Route } from 'react-router-dom';
 
 
@@ -16,6 +17,7 @@ class Main extends React.Component {
                 <Switch>
                     <Route exact path="/conseil" component={Conseil} />
                     <Route exact path="/" component={Home} />
+                    <Route exact path="/test" component={Test} />
                     <Route component={Erreur} />
                 </Switch>
                 <Footer />

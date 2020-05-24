@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 
 export function Hero() {
@@ -32,7 +33,7 @@ export function Doctor() {
                         <span> Je reste vigilant ?</span> <span> Je programme une téléconsultation ?</span> <span>J'appelle le 15
               ?</span> <span> faite le test pour répondre en citoyen</span> <span>éclairé selon vos symptômes.</span>
                     </p>
-                    <a href="quiz.html" className="btn btn-main" data-key="demarer_test">Demarer le test</a>
+                    <Link to="/test" className="btn btn-main" data-key="demarer_test">Demarer le test</Link>
                 </div>
             </div>
         </section>
@@ -117,7 +118,7 @@ export const DemandeTest = () => {
                 symptômes ?
         </h3>
             <img src="./images/1f637.png" alt="" className="demande-test__icon" /><br />
-            <a href="quiz.html" className="btn btn-main" data-key="demarer_test">Demarer le test</a>
+            <Link to="/test" className="btn btn-main" data-key="demarer_test">Demarer le test</Link>
         </section>
     );
 }
