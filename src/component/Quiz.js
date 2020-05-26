@@ -22,19 +22,39 @@ class Quiz extends React.Component {
     }
     render() {
         const { question } = this.props;
+        let res = '';
+        if (question[this.state.index].choices.length === 0) {
+            res =
+                <div className="form-control">
+                    <input type="number" />
+                    {
+                        (question[this.state.index].label) ? <label>{question[this.state.index].label}</label> : ''
+                    }
+                </div>;
+        } else {
+            res = question[this.state.index].choices.forEach(elem => {
+                return (
+                    <div className="form-checkbox">
+                        <input type="radio" checked={false} />
+                        <label>{elem}</label>
+                    </div>
+
+                );
+            });
+        }
         return (
             <main>
                 <div className="container quiz_elem">
                     <p className="question">
                         {question[this.state.index].question}
                     </p>
-                    <form className="form">
-
+                    <form className="form" key={this.state.index}>
+                        {res}
                     </form>
                 </div>
                 <div className="container btnCont">
                     <button className="btn small-btn btn-main question--btn" onClick={this.prevQuestion} disabled={(this.state.index <= 0) ? true : false}>Prev Question</button>
-                    <button className="btn small-btn btn-main question--btn" onClick={this.nextQuestion} disabled={(this.state.index < this.props.question.length - 1) ? false : true}>Next Question</button>
+                    <button className="btn small-btn btn-main question--btn" onClick={this.nextQuestion} disabled={(this.state.index < question.length - 1) ? false : true}>Next Question</button>
                 </div>
                 <Recommandations />
             </main>
