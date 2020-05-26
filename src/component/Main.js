@@ -6,6 +6,7 @@ import Conseil from './Conseil';
 import Erreur from './Erreur';
 import Test from './Test';
 import { Switch, Route } from 'react-router-dom';
+import { QUESTION } from '../shared/question';
 
 
 
@@ -17,7 +18,7 @@ class Main extends React.Component {
                 <Switch>
                     <Route exact path="/conseil" component={Conseil} />
                     <Route exact path="/" component={Home} />
-                    <Route exact path="/test" component={Test} />
+                    <Route exact path="/test" component={() => <Test question={QUESTION} />} />
                     <Route component={Erreur} />
                 </Switch>
                 <Footer />

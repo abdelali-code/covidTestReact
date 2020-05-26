@@ -1,0 +1,65 @@
+.proteger {
+  background-color: $white_color;
+  color: $secondary_color;
+  .proteger__items {
+    display: flex;
+    justify-content: space-between;
+    text-align: center;
+    flex-wrap: wrap;
+
+    .figure {
+      .figure-img__container {
+        img {
+          @media (max-width: 420px) {
+            height: 100px;
+            width: 60%;
+          }
+        }
+      }
+    }
+  }
+}
+
+.home {
+  @media (max-width: 580px) {
+    width: 80% !important;
+  }
+  img {
+    @media (max-width: 580px) {
+      width: 40% !important;
+    }
+  }
+}
+
+// information seection
+
+.information {
+  background-color: $main_color;
+  text-align: center;
+  color: $secondary_color;
+  .information__types {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    @media (max-width: 767px) {
+      flex-direction: column;
+    }
+  }
+  .figure {
+    @media (max-width: 767px) {
+      width: 100% !important;
+    }
+  }
+}
+// end information section
+
+// symptomes transmition
+.symptomes-transmition__items {
+  display: flex;
+  justify-content: space-between;
+  max-width: 850px;
+  margin: 0 auto;
+  text-align: center;
+
+  color: $secondary_color;
+}

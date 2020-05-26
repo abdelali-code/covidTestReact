@@ -1,0 +1,258 @@
+@import "./variables";
+@import "./general";
+@import "./common";
+@import "./helper";
+@import "./header";
+@import "./footer";
+
+// initial width of the progress bar
+$ininial_width: 100%/23;
+
+.progress-bar {
+  width: 350px;
+  margin: 24px auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  span {
+    @extend %big_circle;
+  }
+  .second-circle-container {
+    display: inline-block;
+    position: relative;
+    left: 138px;
+    bottom: 11px;
+  }
+  .line {
+    width: 300px;
+    height: 3px;
+    background-color: $green_color;
+  }
+
+  i {
+    display: inline-block;
+    height: 9px;
+    width: 9px;
+    background-color: $secondary_color;
+    border-radius: 50%;
+    margin-bottom: 3px;
+    @media (max-width: 676px) {
+      margin-bottom: 1px;
+    }
+  }
+}
+
+.progress-bar-description {
+  max-width: 370px;
+  margin: 0px auto;
+  font-size: 1.2rem;
+  display: flex;
+  justify-content: space-between;
+  p {
+    display: inline-block;
+    position: relative;
+    bottom: 15px;
+  }
+  .progress-bar-description--second {
+    margin-left: 60px;
+  }
+  .progress-bar-description--third {
+    margin-left: 80px;
+    @media (max-width: 380px) {
+      margin-left: 50px;
+    }
+  }
+}
+
+%big_circle {
+  text-align: center;
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+}
+
+.preambule {
+  background-color: $main_color;
+  margin: 24px auto;
+  border-radius: 10px;
+  text-align: center;
+  font-size: 2rem;
+  font-family: "Cairo", sans-serif;
+  p {
+    padding: 24px;
+    line-height: 2;
+  }
+}
+
+// preambule
+
+// end preambule
+// show show-progress
+#progre {
+  display: flex;
+  align-items: center;
+}
+.show-progress {
+  // border: 0.5px solid grey;
+  border-radius: 20px;
+  height: 12px;
+  margin: 32px 20px 32px 23%;
+  // width: 600px;
+  width: 50%;
+  background-color: lightblue;
+  @media (max-width: 767px) {
+    width: 90%;
+    margin: 32px auto;
+  }
+  .progress-indicateur {
+    width: $ininial_width;
+    transition-property: width;
+    transition-duration: 2s;
+    transition-delay: 0.1s;
+    border-top-left-radius: 20px;
+    border-bottom-left-radius: 20px;
+    background-color: $green_color;
+    height: 12px;
+  }
+}
+
+//end show progress
+
+// button next and prev in quiz
+.start-btn__container {
+  a {
+    width: 50%;
+    margin-left: 30%;
+    @media (max-width: 400px) {
+      margin-left: 20%;
+    }
+  }
+}
+
+.btnCont {
+  display: flex;
+  justify-content: space-between;
+  margin: 0px auto;
+  max-width: 500px;
+  button {
+    @media (max-width: 500px) {
+      font-size: 1.6rem;
+    }
+  }
+}
+
+// end buttons quiz
+
+// quiz question
+
+.question {
+  min-height: 150px;
+  display: flex;
+  align-items: center;
+  font-size: 2rem;
+  color: $black_color;
+  background-color: rgb(246, 246, 246);
+  border-left: 4px solid $secondary_color;
+  padding: 0px 10px;
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
+}
+.quiz_elem {
+  color: rgba(0, 0, 0, 0.472);
+  max-width: 780px;
+  min-height: 45vh;
+  font-family: $secondary_font;
+}
+
+.form {
+  padding: 15px;
+  max-width: 400px;
+  margin: 0px auto;
+  font-size: 2rem;
+  margin-top: 20px;
+}
+
+.form-checkbox {
+  margin-bottom: 24px;
+  width: 180px;
+  color: #000000;
+  display: flex;
+  justify-content: space-around;
+  @media (max-width: 500px) {
+    width: 155px;
+  }
+  input {
+    height: 20px;
+    width: 20px;
+    position: relative;
+    top: 3.5px;
+  }
+}
+
+input[type="number"] {
+  border: 2px solid $secondary_color;
+  margin-top: 48px;
+  margin-right: 10px;
+  padding: 5px;
+  border-radius: 10px;
+  outline: none;
+  width: 250px;
+}
+input[type="number"]:focus {
+  border: 2px solid $green_color;
+}
+
+.flex-radio {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+// for the resut msg
+
+.msg {
+  max-width: 700px;
+  margin: 32px auto;
+  background-color: $secondary_color;
+
+  font-family: $secondary_font;
+  font-size: 1.8rem;
+  padding: 20px 10px;
+  color: $warning_color;
+  text-align: center;
+  border-radius: 10px;
+}
+
+.reprendre {
+  width: 25%;
+  margin-left: 37.5%;
+  @media (max-width: 500px) {
+    width: 50%;
+    margin-left: 21%;
+  }
+}
+
+// .alert {
+//   position: absolute;
+//   top: 25%;
+//   left: 30%;
+//   background-color: rgb(255, 72, 72);
+//   max-width: 580px;
+//   text-align: center;
+//   border-radius: 10px;
+//   color: #fff;
+//   font-weight: normal;
+//   display: none;
+//   p {
+//     padding: 32px;
+//     margin: 20px auto;
+//   }
+//   header {
+//     float: right;
+//     margin-right: 10px;
+//     cursor: pointer;
+//     font-size: 32px;
+//     color: #000000;
+//   }
+// }
