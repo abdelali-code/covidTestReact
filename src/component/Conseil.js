@@ -113,6 +113,7 @@ function Transmition() {
                     <figcaption className="caption" data-key="trans_2">
                         Face à face pendant au <br />moins 15 min
             </figcaption>
+
                 </figure>
             </div>
         </section>
